@@ -38,11 +38,11 @@ do
 #uj verzio, hatha ez lefut rendesen...
 #----------------------------------
 
-samtools mpileup -uvf $ensembl $p >${basedir}vcf/uvfes${filename}.vcf
+#samtools mpileup -uvf $ensembl $p >${basedir}vcf/uvfes${filename}.vcf
 
+#sweet, sweet tit licking miracle working baby of mary and josept, these files are big if you dont gzip them.
 
-
-
+samtools mpileup -uvf $ensembl $p | gzip - >${basedir}vcf/uvfes${filename}.vcf.gz
 
 done
 
